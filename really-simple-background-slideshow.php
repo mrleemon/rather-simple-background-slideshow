@@ -91,7 +91,7 @@ class Really_Simple_Background_Slideshow {
 	 *
 	 */
     function wp_enqueue_scripts() {
-		wp_enqueue_style( 'really-simple-background-slideshow-css', plugins_url( '/js/vegas.min.css', __FILE__ ) ); 
+		wp_enqueue_style( 'really-simple-background-slideshow-css', plugins_url( '/css/vegas.min.css', __FILE__ ) ); 
 		wp_enqueue_script( 'really-simple-background-slideshow', plugins_url( '/js/vegas.min.js', __FILE__ ), array( 'jquery' ) ); 
 	}
 
