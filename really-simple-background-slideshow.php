@@ -125,9 +125,11 @@ class Really_Simple_Background_Slideshow {
 		}
 		$list = rtrim( $list, ',' );
 
+		$selector = apply_filters( 'rsbs_selector', 'body' );
+			
         $html .= '<script>';
 		$html .= 'jQuery(document).ready(function($){';
-		$html .= '		$("body").vegas({';
+		$html .= '		$("' . wp_strip_all_tags( $selector ) . '").vegas({';
 		$html .= '			slides: [' . $list . '],';
 		$html .= '			delay: 8000';
 		$html .= '		});';
