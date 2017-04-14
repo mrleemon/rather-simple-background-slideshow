@@ -127,14 +127,15 @@ class Really_Simple_Background_Slideshow {
 
 		$selector = apply_filters( 'rsbs_selector', 'body' );
 			
-        $html .= '<script>';
-		$html .= 'jQuery(document).ready(function($){';
-		$html .= '		$("' . wp_strip_all_tags( $selector ) . '").vegas({';
-		$html .= '			slides: [' . $list . '],';
-		$html .= '			delay: 8000';
-		$html .= '		});';
-		$html .= '});';
-		$html .= '</script>';
+        $html .= '<script>
+			jQuery(document).ready(function($){
+				$("' . wp_strip_all_tags( $selector ) . '").vegas({
+					slides: [' . $list . '],
+					delay: 15000,
+					timer: false
+				});
+			});
+			</script>';
 
 		return $html;
 		
