@@ -23,123 +23,123 @@
 
 class Really_Simple_Background_Slideshow {  
 
-	/**
-	 * Plugin instance.
-	 *
-	 * @since 1.0
-	 *
-	 */
-	protected static $instance = null;
+    /**
+     * Plugin instance.
+     *
+     * @since 1.0
+     *
+     */
+    protected static $instance = null;
 
 
-	/**
-	 * Access this plugin’s working instance
-	 *
-	 * @since 1.0
-	 *
-	 */
-	public static function get_instance() {
-		
-		if ( !self::$instance ) {
-			self::$instance = new self;
-		}
+    /**
+     * Access this plugin’s working instance
+     *
+     * @since 1.0
+     *
+     */
+    public static function get_instance() {
+        
+        if ( !self::$instance ) {
+            self::$instance = new self;
+        }
 
-		return self::$instance;
+        return self::$instance;
 
-	}
+    }
 
-	
-	/**
-	 * Used for regular plugin work.
-	 *
-	 * @since 1.0
-	 *
-	 */
-	public function plugin_setup() {
+    
+    /**
+     * Used for regular plugin work.
+     *
+     * @since 1.0
+     *
+     */
+    public function plugin_setup() {
 
-  		$this->includes();
+          $this->includes();
 
         add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
-		add_shortcode( 'bgslideshow', array( $this, 'display_shortcode' ) );
-	
-	}
-
-	
-	/**
-	 * Constructor. Intentionally left empty and public.
-	 *
-	 * @since 1.0
-	 *
-	 */
-	public function __construct() {}
-
-	
-	
- 	/**
-	 * Includes required core files used in admin and on the frontend.
-	 *
-	 * @since 1.0
-	 *
-	 */
-	protected function includes() {}
-
-
-	/**
-	 * Enqueues scripts in the frontend.
-	 *
-	 * @since 1.0
-	 *
-	 */
-    function wp_enqueue_scripts() {
-		wp_enqueue_style( 'really-simple-background-slideshow-css', plugins_url( '/assets/css/vegas.min.css', __FILE__ ) ); 
-		wp_enqueue_script( 'really-simple-background-slideshow', plugins_url( '/assets/js/vegas.min.js', __FILE__ ), array( 'jquery' ) ); 
-	}
-
-
-	/**
-	 * Shows a background slideshow
-	 *
-	 * @since 1.0
-	 *
-	 */
-	function display_shortcode( $atts ) {
-
-		$html = '';
-
-		$args = array(
-			'post_type' => 'attachment',
-			'numberposts' => -1,    
-			'post_status' => null,
-			'post_parent' => get_the_ID(),
-			'post_mime_type' => 'image',
-			'orderby' => 'rand'
-		);
+        add_shortcode( 'bgslideshow', array( $this, 'display_shortcode' ) );
     
-		$list = '';
-		$attachments = get_posts( $args );
-		if ( $attachments ) {
-			foreach ( $attachments as $attachment ) {
-				$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'full' );
-				$list = $list . '{ src:"' . $image_attributes[0] . '" },';
-			}
-		}
-		$list = rtrim( $list, ',' );
+    }
 
-		$selector = apply_filters( 'rsbs_selector', 'body' );
-			
+    
+    /**
+     * Constructor. Intentionally left empty and public.
+     *
+     * @since 1.0
+     *
+     */
+    public function __construct() {}
+
+    
+    
+     /**
+     * Includes required core files used in admin and on the frontend.
+     *
+     * @since 1.0
+     *
+     */
+    protected function includes() {}
+
+
+    /**
+     * Enqueues scripts in the frontend.
+     *
+     * @since 1.0
+     *
+     */
+    function wp_enqueue_scripts() {
+        wp_enqueue_style( 'really-simple-background-slideshow-css', plugins_url( '/assets/css/vegas.min.css', __FILE__ ) ); 
+        wp_enqueue_script( 'really-simple-background-slideshow', plugins_url( '/assets/js/vegas.min.js', __FILE__ ), array( 'jquery' ) ); 
+    }
+
+
+    /**
+     * Shows a background slideshow
+     *
+     * @since 1.0
+     *
+     */
+    function display_shortcode( $atts ) {
+
+        $html = '';
+
+        $args = array(
+            'post_type' => 'attachment',
+            'numberposts' => -1,    
+            'post_status' => null,
+            'post_parent' => get_the_ID(),
+            'post_mime_type' => 'image',
+            'orderby' => 'rand'
+        );
+    
+        $list = '';
+        $attachments = get_posts( $args );
+        if ( $attachments ) {
+            foreach ( $attachments as $attachment ) {
+                $image_attributes = wp_get_attachment_image_src( $attachment->ID, 'full' );
+                $list = $list . '{ src:"' . $image_attributes[0] . '" },';
+            }
+        }
+        $list = rtrim( $list, ',' );
+
+        $selector = apply_filters( 'rsbs_selector', 'body' );
+            
         $html .= '<script>
-			jQuery(document).ready(function($){
-				$("' . wp_strip_all_tags( $selector ) . '").vegas({
-					slides: [' . $list . '],
-					delay: 15000,
-					timer: false
-				});
-			});
-			</script>';
+            jQuery(document).ready(function($){
+                $("' . wp_strip_all_tags( $selector ) . '").vegas({
+                    slides: [' . $list . '],
+                    delay: 15000,
+                    timer: false
+                });
+            });
+            </script>';
 
-		return $html;
-		
-	}
+        return $html;
+        
+    }
 
 }
 
