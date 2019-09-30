@@ -144,6 +144,3 @@ class Really_Simple_Background_Slideshow {
 }
 
 add_action( 'plugins_loaded', array ( Really_Simple_Background_Slideshow::get_instance(), 'plugin_setup' ) );
-
-
-?>
