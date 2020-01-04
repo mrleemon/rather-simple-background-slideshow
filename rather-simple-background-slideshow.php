@@ -1,6 +1,6 @@
 <?php
 /*
-  Plugin Name: Really Simple Background Slideshow
+  Plugin Name: Rather Simple Background Slideshow
   Plugin URI: http://wordpress.org/plugins/vegas/
   Description: 
   Version: 1.0
@@ -21,7 +21,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-class Really_Simple_Background_Slideshow {  
+class Rather_Simple_Background_Slideshow {  
 
     /**
      * Plugin instance.
@@ -91,8 +91,8 @@ class Really_Simple_Background_Slideshow {
      *
      */
     function wp_enqueue_scripts() {
-        wp_enqueue_style( 'really-simple-background-slideshow-css', plugins_url( '/assets/css/vegas.min.css', __FILE__ ) ); 
-        wp_enqueue_script( 'really-simple-background-slideshow', plugins_url( '/assets/js/vegas.min.js', __FILE__ ), array( 'jquery' ) ); 
+        wp_enqueue_style( 'rather-simple-background-slideshow-css', plugins_url( '/assets/css/vegas.min.css', __FILE__ ) ); 
+        wp_enqueue_script( 'rather-simple-background-slideshow', plugins_url( '/assets/js/vegas.min.js', __FILE__ ), array( 'jquery' ) ); 
     }
 
 
@@ -143,4 +143,4 @@ class Really_Simple_Background_Slideshow {
 
 }
 
-add_action( 'plugins_loaded', array ( Really_Simple_Background_Slideshow::get_instance(), 'plugin_setup' ) );
+add_action( 'plugins_loaded', array ( Rather_Simple_Background_Slideshow::get_instance(), 'plugin_setup' ) );

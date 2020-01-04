@@ -1,4 +1,4 @@
-=== Really Simple Background Slideshow ===
+=== Rather Simple Background Slideshow ===
 Contributors: leemon
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=oscarciutat%40gmail%2ecom
 Tags: media, images, attachments, background, slideshow, fullpage
@@ -19,7 +19,7 @@ Displays a Vegas background slideshow in a page
 
 == Copyright ==
 
-Really Simple Background Slideshow is distributed under the terms of the GNU GPL
+Rather Simple Background Slideshow is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Really Simple Background Slideshow bundles the following third-party resources:
+Rather Simple Background Slideshow bundles the following third-party resources:
 
 Vegas Background Slideshow
 License: The MIT License (MIT)
