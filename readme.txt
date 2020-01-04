@@ -8,10 +8,10 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Displays a Vegas background slideshow in a page
+A really simple background slideshow
 
 == Description ==
-Displays a Vegas background slideshow in a page
+A really simple background slideshow
 
 == Installation ==
 1. Upload the extracted plugin folder and contained files to your /wp-content/plugins/ directory

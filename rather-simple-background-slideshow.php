@@ -1,10 +1,11 @@
 <?php
 /*
   Plugin Name: Rather Simple Background Slideshow
-  Plugin URI: http://wordpress.org/plugins/vegas/
-  Description: 
   Version: 1.0
-  Author: leemon
+  Plugin URI:
+  Author: Oscar Ciutat
+  Author URI: http://oscarciutat.com/code/
+  Description: A really simple background slideshow
   License: GPLv2 or later
 
   This program is free software; you can redistribute it and/or modify
