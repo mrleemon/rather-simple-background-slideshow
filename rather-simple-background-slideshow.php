@@ -3,6 +3,7 @@
   Plugin Name: Rather Simple Background Slideshow
   Version: 1.0
   Plugin URI:
+  Update URI: false
   Author: Oscar Ciutat
   Author URI: http://oscarciutat.com/code/
   Description: A really simple background slideshow
