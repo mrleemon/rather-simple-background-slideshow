@@ -33,7 +33,6 @@ class Rather_Simple_Background_Slideshow {
      */
     protected static $instance = null;
 
-
     /**
      * Access this plugin’s working instance
      *
@@ -49,7 +48,6 @@ class Rather_Simple_Background_Slideshow {
         return self::$instance;
 
     }
-
     
     /**
      * Used for regular plugin work.
@@ -66,7 +64,6 @@ class Rather_Simple_Background_Slideshow {
     
     }
 
-    
     /**
      * Constructor. Intentionally left empty and public.
      *
@@ -74,17 +71,14 @@ class Rather_Simple_Background_Slideshow {
      *
      */
     public function __construct() {}
-
     
-    
-     /**
+    /**
      * Includes required core files used in admin and on the frontend.
      *
      * @since 1.0
      *
      */
     protected function includes() {}
-
 
     /**
      * Enqueues scripts in the frontend.
@@ -96,7 +90,6 @@ class Rather_Simple_Background_Slideshow {
         wp_enqueue_style( 'rather-simple-background-slideshow-css', plugins_url( '/assets/css/vegas.min.css', __FILE__ ) ); 
         wp_enqueue_script( 'rather-simple-background-slideshow', plugins_url( '/assets/js/vegas.min.js', __FILE__ ), array( 'jquery' ) ); 
     }
-
 
     /**
      * Shows a background slideshow
