@@ -123,7 +123,7 @@ class Rather_Simple_Background_Slideshow {
         $selector = apply_filters( 'rsbs_selector', 'body' );
             
         $html .= '<script>
-            $( function() {
+            jQuery( function( $ ) {
                 $( "' . wp_strip_all_tags( $selector ) . '" ).vegas( {
                     slides: [' . $list . '],
                     delay: 15000,
