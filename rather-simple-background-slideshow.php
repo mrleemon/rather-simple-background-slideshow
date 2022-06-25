@@ -76,8 +76,19 @@ class Rather_Simple_Background_Slideshow {
 	 * Enqueues scripts in the frontend
 	 */
 	public function wp_enqueue_scripts() {
-		wp_enqueue_style( 'rather-simple-background-slideshow-css', plugins_url( '/assets/css/vegas.min.css', __FILE__ ) );
-		wp_enqueue_script( 'rather-simple-background-slideshow', plugins_url( '/assets/js/vegas.min.js', __FILE__ ), array( 'jquery' ) );
+		wp_enqueue_style(
+			'rather-simple-background-slideshow-css',
+			plugins_url( '/assets/css/vegas.min.css', __FILE__ ),
+			array(),
+			filemtime( plugin_dir_path( __FILE__ ) . '/assets/css/vegas.min.css' )
+		);
+		wp_enqueue_script(
+			'rather-simple-background-slideshow',
+			plugins_url( '/assets/js/vegas.min.js', __FILE__ ),
+			array( 'jquery' ),
+			filemtime( plugin_dir_path( __FILE__ ) . '/assets/js/vegas.min.js' ),
+			false
+		);
 	}
 
 	/**
