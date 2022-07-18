@@ -1,9 +1,11 @@
 <?php
 /**
  * Plugin Name: Rather Simple Background Slideshow
- * Version: 1.0
  * Plugin URI:
  * Update URI: false
+ * Version: 1.0
+ * Requires at least: 5.3
+ * Requires PHP: 7.0
  * Author: Oscar Ciutat
  * Author URI: http://oscarciutat.com/code/
  * Description: A really simple background slideshow
