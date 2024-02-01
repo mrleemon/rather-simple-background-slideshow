@@ -49,7 +49,6 @@ class Rather_Simple_Background_Slideshow {
 		}
 
 		return self::$instance;
-
 	}
 
 	/**
@@ -61,7 +60,6 @@ class Rather_Simple_Background_Slideshow {
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
 		add_shortcode( 'bgslideshow', array( $this, 'display_shortcode' ) );
-
 	}
 
 	/**
@@ -95,10 +93,8 @@ class Rather_Simple_Background_Slideshow {
 
 	/**
 	 * Shows a background slideshow
-	 *
-	 * @param array $atts  An array of attributes.
 	 */
-	public function display_shortcode( $atts ) {
+	public function display_shortcode() {
 
 		$html = '';
 
@@ -134,9 +130,7 @@ class Rather_Simple_Background_Slideshow {
             </script>';
 
 		return $html;
-
 	}
-
 }
 
 add_action( 'plugins_loaded', array( Rather_Simple_Background_Slideshow::get_instance(), 'plugin_setup' ) );
